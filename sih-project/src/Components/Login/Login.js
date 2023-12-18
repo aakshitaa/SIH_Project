@@ -79,7 +79,7 @@ export default function SignInSide() {
                 required
                 fullWidth
                 id="email"
-                label="Vault Address"
+                label="Vault URL"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -89,7 +89,7 @@ export default function SignInSide() {
                 required
                 fullWidth
                 name="password"
-                label="Vault Password"
+                label="Vault Name"
                 type="password"
                 id="password"
                 autoComplete="current-password"

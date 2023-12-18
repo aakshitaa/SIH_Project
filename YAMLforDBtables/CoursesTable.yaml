@@ -1,0 +1,14 @@
+CoursesTable:
+  attributes:
+    CourseID:
+      description: Unique identifier for each course.
+    InstitutionID:
+      description: Foreign key referencing the InstitutionID in the Institutions table.
+    Name:
+      description: Name of the course.
+    Duration:
+      description: Duration of the course in years.
+    Level:
+      description: Academic level of the course
+    Stream:
+      description: Stream or field of study for the course 

@@ -1,0 +1,16 @@
+ResearchProjectsTable:
+  attributes:
+    ProjectID:
+      description: Unique identifier for each research project.
+    InstitutionID:
+      description: Reference to the InstitutionID in the Institutions table.
+    Title:
+      description: Title of the research project.
+    FundingAgency:
+      description: Agency providing funding for the research project.
+    StartDate:
+      description: Start date of the research project.
+    EndDate:
+      description: End date of the research project.
+    Budget:
+      description: Budget allocated for the research project.

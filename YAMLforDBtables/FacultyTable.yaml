@@ -1,0 +1,14 @@
+FacultyTable:
+  attributes:
+    FacultyID:
+      description: Unique identifier for each faculty member.
+    InstitutionID:
+      description: Foreign key referencing the InstitutionID in the Institutions table.
+    Name:
+      description: Name of the faculty member.
+    Qualification:
+      description: Educational qualification of the faculty member.
+    Specialization:
+      description: Area of specialization for the faculty member.
+    ExperienceYears:
+      description: Number of years of experience of the faculty member.

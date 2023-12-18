@@ -1,0 +1,14 @@
+InstitutionsTable:
+  TotalRecords: 
+  attributes:
+    Name:
+      description: "Stores the details of the institution"
+    Location:
+      description: "Stores the location of the institution"
+    AccreditationStatus:
+      description: "Stores the accreditation status of the institution"
+    EstablishmentYear:
+      description: "Stores the year of establishment of the institution"
+    InstitutionType:
+      description: "Stores the type of the institution"
+

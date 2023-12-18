@@ -1,0 +1,14 @@
+StudentsTable:
+  attributes:
+    StudentID:
+      description: Unique identifier for each student.
+    InstitutionID:
+      description: Foreign key referencing the InstitutionID in the Institutions table.
+    Name:
+      description: Name of the student.
+    CourseID:
+      description: Foreign key referencing the CourseID in the Courses table.
+    EnrollmentYear:
+      description: Year of enrollment for the student.
+    Email:
+      description: Email address of the student.

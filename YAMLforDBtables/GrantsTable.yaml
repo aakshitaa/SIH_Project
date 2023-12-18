@@ -1,0 +1,12 @@
+GrantsTable:
+  attributes:
+    GrantID:
+      description: Unique identifier for each grant.
+    InstitutionID:
+      description: Foreign key referencing the InstitutionID in the Institutions table.
+    Amount:
+      description: Amount of the grant (in DECIMAL format).
+    Purpose:
+      description: Purpose or objective of the grant.
+    YearAwarded:
+      description: Year in which the grant was awarded (in YEAR format).

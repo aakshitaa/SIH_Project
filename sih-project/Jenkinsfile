@@ -15,7 +15,7 @@ pipeline {
                     // Build the Docker image
                    sh '''
             cd ./sih-project/
-            docker build -t sih:0.1 .
+            sudo docker build -t sih:0.1 .
             '''
                 }
             }

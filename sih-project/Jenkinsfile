@@ -9,37 +9,29 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build Docker Image and push to ecr') {
             steps {
                 script {
                     // Build the Docker image
                    sh '''
             cd ./sih-project/
-            sudo docker build -t sih:0.1 .
+            aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/q6a6x9j2
+            docker build -t sih .
+            docker tag sih:latest public.ecr.aws/q6a6x9j2/sih:latest
+            docker push public.ecr.aws/q6a6x9j2/sih:latest
             '''
                 }
             }
         }
 
-        stage('Push Docker Image to Registry') {
-            steps {
-                script {
-                    // Push the Docker image to your container registry (replace with your registry details)
-                    docker.withRegistry('https://hub.docker.com/repository/docker/aakshita/sih', 'SIH-Docker-creds') {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
-
-        stage('Deploy to Kubernetes') {
-            steps {
-                script {
-                    // Deploy the Docker image to your Kubernetes cluster (replace with your kubectl configuration)
-                    // sh 'kubectl apply -f kubernetes-deployment.yaml'
-                    echo "success"
-                }
-            }
-        }
+        // stage('Deploy to Kubernetes') {
+        //     steps {
+        //         script {
+        //             // Deploy the Docker image to your Kubernetes cluster (replace with your kubectl configuration)
+        //             // sh 'kubectl apply -f kubernetes-deployment.yaml'
+        //             echo "success"
+        //         }
+        //     }
+        // }
     }
 }

@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the source code from your version control system
+                checkout scm
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image
+                    dockerImage = docker.build('SIH-Login')
+                }
+            }
+        }
+
+        stage('Push Docker Image to Registry') {
+            steps {
+                script {
+                    // Push the Docker image to your container registry (replace with your registry details)
+                    docker.withRegistry('https://hub.docker.com/repository/docker/aakshita/sih', 'SIH-Docker-creds') {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    // Deploy the Docker image to your Kubernetes cluster (replace with your kubectl configuration)
+                    // sh 'kubectl apply -f kubernetes-deployment.yaml'
+                    echo "success"
+                }
+            }
+        }
+    }
+}

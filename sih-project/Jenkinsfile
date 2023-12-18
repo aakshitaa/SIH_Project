@@ -13,7 +13,9 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    dockerImage = docker.build('SIH-Login')
+                    sh '
+                    cd ./SIH_Project/sih-project/
+                    docker build -t sih:0.1 .'
                 }
             }
         }

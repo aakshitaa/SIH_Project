@@ -14,7 +14,7 @@ pipeline {
                 script {
                     // Build the Docker image
                    sh '''
-            cd ./SIH_Project/sih-project/
+            cd ./sih-project/
             docker build -t sih:0.1 .
             '''
                 }
